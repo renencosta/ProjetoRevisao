@@ -8,32 +8,35 @@ Vamos criar um programa que gerencie uma **lista de notas de alunos** e calcule 
 2. Exibir as notas e calcular a média.
 3. Verificar se o aluno foi aprovado ou reprovado (média >= 7 para aprovação).*/
 
-using System.Globalization;
 
 Console.WriteLine("=== Gerenciador de Notas ===");
 
+
 try
 {
-    double[] notas = new double[6];
+    double[] notas = new double[5];
     
     //captando as notas do aluno
-    for (int i = 1; i < notas.Length; i++)
+
+    for (int i = 0; i < notas.Length; i++)
     {
-        Console.WriteLine($"Digite a {i}ª nota: ");
-        notas[i] = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-        if (notas[i] < 0 ||  notas[i] > 10)
-        {
-            throw new ArgumentOutOfRangeException("Nota inválida.");
-        }
-    }
-    
+        
+        Console.WriteLine($"Digite a {i+1}ª nota: ");
+        notas[i] = double.Parse(Console.ReadLine());
+        if (notas[i] < 0 || notas[i] > 10)
+            {
+                throw new ArgumentOutOfRangeException("Nota inválida.");
+            }                   
+       
+        
+    }    
 
     Console.WriteLine(" ");
 
     //exibindo as notas do aluno
-    for (int i = 1; i < notas.Length; i++)
+    for (int i = 0; i < notas.Length; i++)
     {
-        Console.WriteLine($"A {i}ª nota é: {notas[i]}");
+        Console.WriteLine($"A {i+1}ª nota é: {notas[i]}");
     }
 
     Console.WriteLine(" ");
